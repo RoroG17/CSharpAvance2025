@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqExercicePresentationNet
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataSources", "..\DataSources\DataSources.csproj", "{F111967D-03D7-255E-7B56-B2DD870EB714}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExerciceNoté", "..\ExerciceNoté\ExerciceNoté\ExerciceNoté.csproj", "{6D71B391-2363-617D-687E-FB3F067AC2E0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{F111967D-03D7-255E-7B56-B2DD870EB714}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F111967D-03D7-255E-7B56-B2DD870EB714}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F111967D-03D7-255E-7B56-B2DD870EB714}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D71B391-2363-617D-687E-FB3F067AC2E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D71B391-2363-617D-687E-FB3F067AC2E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D71B391-2363-617D-687E-FB3F067AC2E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D71B391-2363-617D-687E-FB3F067AC2E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
