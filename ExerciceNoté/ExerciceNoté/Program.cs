@@ -3,6 +3,8 @@
 using System.Xml.Linq;
 using static System.Net.Mime.MediaTypeNames;
 
+string fileName = "joueurs.csv";
+
 XElement convertXML(IEnumerable<string> text , string separator)
 {
     var header = text.First().Split(separator);
@@ -94,7 +96,8 @@ IEnumerable<string>? FiltrerDonnees(string path, string separator)
     return text.Prepend(string.Join(',', header));
 }
 
-string directory = $@"{Directory.GetCurrentDirectory()}\joueurs.csv";
+string directory = $@"{Directory.GetCurrentDirectory()}\{fileName}";
+
 Console.WriteLine(directory);
 
 if (!File.Exists(directory))
@@ -158,7 +161,7 @@ else
                 case "1":
                     Console.WriteLine("Exportation des résultats...");
                     xml.Save("export.xml");
-                    string filePath = Path.Combine(directory, "export.xml");
+                    string filePath = Path.Combine(Directory.GetCurrentDirectory(), "export.xml");
                     Console.WriteLine("Résultats exportés dans le fichier : " + filePath);
                     break;
                 case "2":
