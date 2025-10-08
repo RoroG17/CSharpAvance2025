@@ -46,24 +46,22 @@ sw.Stop();
 
 Console.WriteLine($"Le templs de calcul parallèle est de {sw.ElapsedMilliseconds} ms");
 
-using System.Diagnostics;
-
-var sw = Stopwatch.StartNew();
+var sw2 = Stopwatch.StartNew();
 
 string outputDir = "imagesDownloaded";
 Directory.CreateDirectory(outputDir);
 
 int count = 10; // nombre d'images à télécharger
 string url = "https://picsum.photos/1920/1080";
-sw.Restart();
+sw2.Restart();
 DownloadImagesSequential(url, outputDir, count);
-sw.Stop();
-Console.WriteLine($"⏱️ Séquentiel : {sw.ElapsedMilliseconds} ms\n");
+sw2.Stop();
+Console.WriteLine($"⏱️ Séquentiel : {sw2.ElapsedMilliseconds} ms\n");
 
-sw.Restart();
+sw2.Restart();
 await DownloadImagesAsync(url, outputDir, count);
-sw.Stop();
-Console.WriteLine($"⚡ Asynchrone : {sw.ElapsedMilliseconds} ms\n");
+sw2.Stop();
+Console.WriteLine($"⚡ Asynchrone : {sw2.ElapsedMilliseconds} ms\n");
 
 // 🧱 VERSION 1 — Séquentielle (bloquante)
 static void DownloadImagesSequential(string url, string outputDir, int count)
@@ -99,13 +97,6 @@ static async Task DownloadSingleImageAsync(HttpClient http, string url, string p
     var bytes = await http.GetByteArrayAsync(url);
     await File.WriteAllBytesAsync(path, bytes); // Écriture asynchrone
     Console.WriteLine($"[Async] Image {index}/{total} téléchargée");
-}
-
-static void DownloadSingleImage(HttpClient http, string url, string path, int index, int total)
-{
-    var bytes = http.GetByteArrayAsync(url).Result;
-    File.WriteAllBytes(path, bytes); // Écriture synchrone
-    Console.WriteLine($"[Sync] Image {index}/{total} téléchargée");
 }
 
 var numbers = new List<int>();
