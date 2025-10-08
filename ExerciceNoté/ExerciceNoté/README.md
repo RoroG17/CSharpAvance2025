@@ -19,7 +19,7 @@ Chaque étape est interactive, réalisée depuis la console.
 
 Vous pouvez changer le fichier csv facilement voici les étapes :
 
-	- Déposer dans le répertoire d'execution votre fichier csv
+	- Déposer dans le répertoire d'execution votre fichier csv ({Directory}/bin/Debug/net8.0)
 	
 	- Changer le nom du fichier dans le code dans la variable "fileName" (l.6)
 	
